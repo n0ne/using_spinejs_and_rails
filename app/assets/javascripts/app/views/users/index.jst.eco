@@ -1,0 +1,5 @@
+<h2>
+	Users Area
+</h2>
+
+<a data-type="new_user" class="link">New user</a>

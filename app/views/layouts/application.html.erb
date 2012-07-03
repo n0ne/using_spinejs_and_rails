@@ -5,10 +5,21 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+  <script type="text/javascript" charset="utf-8">
+    jQuery(function(){
+      new App();
+    });
+  </script>
+
 </head>
 <body>
-
-<%= yield %>
+  <div>
+    <div id="sidebar" style="width: 150px; float: left;">
+         </div>
+         <div id="main" style="width: 500px;">
+         </div>
+  </div>
 
 </body>
 </html>

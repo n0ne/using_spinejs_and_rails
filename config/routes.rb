@@ -1,4 +1,7 @@
 Substack::Application.routes.draw do
+  get "stack/index"
+  root :to => 'stack#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -14,11 +14,12 @@
 class App extends Spine.Controller
   constructor: ->
     super
-    
-    # Initialize controllers:
-    #  @append(@items = new App.Items)
-    #  ...
-    
-    Spine.Route.setup()    
+
+    new App.Sidebar({el: $("#sidebar")})
+    new App.Root({el: $("#main")})
+
+    Spine.Route.setup()
+
+
 
 window.App = App
