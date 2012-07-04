@@ -1,4 +1,19 @@
-<ul>
+<!-- <ul>
 	<li><a data-type="users" class="link">Users</a></li>
 	<li><a data-type="posts" class="link">Posts</a></li>
 </ul>
+ -->
+
+ <!-- <div class="span3"> -->
+	<ul class="nav nav-list">
+	  <li class="nav-header">Content</li>
+	  <li id="add_post"><a data-type="new_post" class="link"><i class="icon-file"></i>New post</a></li>
+	  <li id="all_posts" class="active"><a data-type="posts"  class="link"><i class="icon-copy"></i>Posts</a></li>
+	  <li id="all_users"><a data-type="users"  class="link"><i class="icon-group"></i>Users</a></li>
+	  <li class="nav-header">Media</li>
+	  <li><a href="#">Pictures</a></li>
+	  <li id="all_media"><a data-type="media"  class="link">Music</a></li>
+	  <li class="divider"></li>
+	  <li><a href="#">Help</a></li>
+	</ul>
+<!-- </div> -->

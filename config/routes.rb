@@ -1,4 +1,6 @@
 Substack::Application.routes.draw do
+  resources :posts
+
   get "stack/index"
   root :to => 'stack#index'
 

@@ -1,0 +1,26 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.postslist {
+	padding: 8px 0px 8px 0px;
+  	border-bottom: 1px solid #DDD;
+}
+
+.showpost {
+	padding: 8px 0px 8px 0px;
+}
+#app .span6 {
+	margin-left: 60px;
+}
+a i {
+	color: #999;
+}
+
+.nav-list .active i {
+	color: #fff;
+}
+
+textarea {
+	height: 200px;
+}

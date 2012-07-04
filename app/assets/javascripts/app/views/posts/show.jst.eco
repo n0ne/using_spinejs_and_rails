@@ -1,0 +1,20 @@
+<h4>Show Post</h4>
+
+<!-- <div style="display: none;" id="post_id"><%= @id %></div> -->
+
+<div class="row">
+	<div class="span6">
+		<div class="row showpost">
+			<div class="span1">Title:</div>
+			<div class="span5"><%= @title %></div>
+		</div>
+		<div class="row showpost">
+			<div class="span1">Body:</div>
+			<div class="span5"><%= @body %></div>
+		</div>
+	</div>
+	<div class="span2">
+		<a data-type="back" class="btn btn-mini">Back</a>
+		<a data-type="edit" class="btn btn-mini btn-primary">Edit</a>
+	</div>
+</div>

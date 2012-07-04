@@ -15,12 +15,12 @@ class Index extends Spine.Controller
 
   new_user: =>
     @log('App.Users Index Controller new_user function')
-    @navigate '/new'
+    @navigate '/users/new'
 
 class New extends Spine.Controller
 
   events:
-    'click [data-type=all_users]':        'all_users'
+    'click [data-type=all_users]':        'show_users'
 
   constructor: ->
     super
@@ -33,7 +33,7 @@ class New extends Spine.Controller
     @log('App.Users New Controller render function')
     @html @view('users/new')
 
-  all_users: =>
+  show_users: =>
     @log('App.Users New Controller all_users function')
     @navigate '/users'
 
@@ -49,7 +49,7 @@ class App.Users extends Spine.SubStack
   routes:
     '/users':          'index'
     '':                'index'
-    '/new':            'new'
+    '/users/new':      'new'
 
   # default:  'index'
 

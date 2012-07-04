@@ -1,3 +1,22 @@
-<h2>
+<!-- <h2>
 	Posts Area
-</h2>
+</h2> -->
+<div class="row postslist">
+	<div class="span4">
+		<h4>Title</h4>
+	</div>
+	<div class="span2">
+		<h4>Action</h4>
+	</div>
+</div>
+<% for post in @posts: %>
+<div class="row postslist" data-id="<%= post.id %>">
+	<div class="span4">
+		<a data-type="show" class="link"><%= post.title %></a>
+	</div>
+	<div class="span2">
+		<a data-type="edit" class="btn btn-primary btn-mini">Edit</a>
+		<a data-type="destroy" class="btn btn-danger btn-mini">Destroy</a>
+	</div>
+</div>
+<% end %>
