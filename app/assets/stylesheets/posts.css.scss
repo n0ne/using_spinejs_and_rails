@@ -1,15 +1,24 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-.postslist {
+.container {
+	margin-right: 0px;
+	// margin-left:  0px;
+}
+.postslist, .title {
 	padding: 8px 0px 8px 0px;
   	border-bottom: 1px solid #DDD;
+  	margin-left: 0px;
 }
 
+.title {
+	padding: 8px 0px 8px 0px;
+  	margin-left: 0px;
+}
 .showpost {
 	padding: 8px 0px 8px 0px;
 }
+
 #app .span6 {
 	margin-left: 60px;
 }
@@ -24,3 +33,38 @@ a i {
 textarea {
 	height: 200px;
 }
+
+.main_container {
+	height: 300px;
+	width: 590px;
+	// overflow: auto;
+	overflow-y: scroll;
+	// padding-right: 10px;
+	// overflow-y: hidden;
+	// -moz-appearance: checkbox-container;
+}
+.title .span5 {
+	width: 520px;
+}
+.title .span1 {
+	width: 90px;
+}
+
+.posts_container .span5 {
+	width: 520px;
+}
+.posts_container .span1 {
+	width: 90px;
+}
+
+.posts_container {
+	margin-right: 5px;
+	overflow: auto;
+	height: 300px;
+}
+
+.all_users ::-webkit-scrollbar{width:9px;height:9px;}
+.all_users ::-webkit-scrollbar-button:start:decrement,#doc ::-webkit-scrollbar-button:end:increment{display:block;height:0;background-color:transparent;}
+.all_users ::-webkit-scrollbar-track-piece{background-color:#FAFAFA;-webkit-border-radius:0;-webkit-border-bottom-right-radius:8px;-webkit-border-bottom-left-radius:8px;}
+.all_users ::-webkit-scrollbar-thumb:vertical{height:50px;background-color:#999;-webkit-border-radius:8px;}
+.all_users ::-webkit-scrollbar-thumb:horizontal{width:50px;background-color:#999;-webkit-border-radius:8px;}

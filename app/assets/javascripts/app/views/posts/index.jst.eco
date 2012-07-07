@@ -1,22 +1,82 @@
 <!-- <h2>
 	Posts Area
 </h2> -->
-<div class="row postslist">
-	<div class="span4">
-		<h4>Title</h4>
+<!-- <div style="display:none;" id="first"></div>
+<div style="display:none;" id="last"></div> -->
+
+<!-- <div id="111">
+	<div class="main_container">
+		<div class="row title">
+			<div class="span4">
+				<h4>Title</h4>
+			</div>
+			<div class="span2">
+				<h4>Action</h4>
+			</div>
+		</div>
+		<% for post in @posts: %>
+		<div class="row postslist" data-id="<%= post.id %>">
+			<div class="span4">
+				<a data-type="show" class="link"><%= post.title %></a>
+			</div>
+			<div class="span2">
+				<a data-type="edit" class="btn btn-primary btn-mini">Edit</a>
+				<a data-type="destroy" class="btn btn-danger btn-mini">Destroy</a>
+			</div>
+		</div>
+		<% end %>
 	</div>
-	<div class="span2">
-		<h4>Action</h4>
-	</div>
-</div>
-<% for post in @posts: %>
-<div class="row postslist" data-id="<%= post.id %>">
-	<div class="span4">
-		<a data-type="show" class="link"><%= post.title %></a>
-	</div>
-	<div class="span2">
-		<a data-type="edit" class="btn btn-primary btn-mini">Edit</a>
-		<a data-type="destroy" class="btn btn-danger btn-mini">Destroy</a>
-	</div>
-</div>
-<% end %>
+</div> -->
+
+<!-- <div id="page">
+		<div id="" class="">
+			<div class="">
+				<div class=""> -->
+					<div class="row title" >
+						<div class="span7">
+							<h4>Title</h4>
+						</div>
+						<div class="span1">
+							<h4>Action</h4>
+						</div>
+					</div>
+					<!-- <div id="news-container">
+						<div id="111"> -->
+							<div class="posts_container" >
+								<% for post in @posts: %>
+								<div class="row postslist" data-id="<%= post.id %>">
+									<div class="span7">
+										<a data-type="show" class="link"><%= post.title %></a>
+									</div>
+									<div class="span1">
+										<a data-type="edit" class="btn btn-primary btn-mini">Edit</a>
+										<a data-type="destroy" class="btn btn-danger btn-mini">Destroy</a>
+									</div>
+								</div>
+								<% end %>
+							</div>
+						<!-- </div>
+
+
+						<div class="news-content"></div>
+					</div> -->
+			<!--	</div>
+			 </div>
+
+			<div class="rigth-container f">
+				<div class="wrapper">
+				</div>
+			</div>
+		</div>
+	</div> -->
+<!--
+	<script type="text/javascript">
+		$(function () {
+			console.log("Show scrollbar.");
+			 	// $('div#news-container').jScrollPane({ autoReinitialise: false });
+
+			if ($(".all_users").hasClass("active")) {
+				$('div#news-container').jScrollPane({ autoReinitialise: false });
+			}
+		});
+	</script>-->

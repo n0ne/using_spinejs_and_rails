@@ -4,39 +4,44 @@ $.fn.item = ->
   App.Post.find(elementID)
 
 class Index extends Spine.Controller
-  events:
-    'click [data-type=edit]':    'edit'
-    'click [data-type=destroy]': 'destroy'
-    'click [data-type=show]':    'show'
-    # 'click [data-type=new]':     'new'
 
+  className: "all_users"
+
+  events:
+    'click [data-type=show]':       'show'
+    'click [data-type=edit]':       'edit'
+    'click [data-type=destroy]':    'destroy'
   constructor: ->
     super
+    # $.getJSON "posts/ids", (data) ->
+    #   $("#first").text(data.first_id)
+    #   $("#last").text(data.last_id)
+    @log('App.Posts Index Controller constructor')
     App.Post.bind 'refresh change', @render
     App.Post.fetch()
-    @log('App.Posts Index Controller constructor')
 
   render: =>
-    @posts = App.Post.all()
     @log('App.Posts Index Controller render function')
+    @posts = App.Post.all()
     @html @view('posts/index')(posts: @posts)
+
+
 
   show: (e) ->
     @log('App.Posts Index Controller show function')
-    @log($(e.target).data('id'))
-    item = $(e.target).item()
-    @navigate '/posts', item.id
+    @log($(e.target).parent().parent().data('id'))
+    itemID = $(e.target).parent().parent().data('id')
+    @navigate '/posts', itemID
 
   edit: (e) ->
     @log('App.Posts Index Controller edit function')
-    item = $(e.target).item()
-    @log(item)
-    @navigate '/posts', item.id, 'edit'
+    itemID = $(e.target).parent().parent().data('id')
+    @navigate '/posts', itemID, 'edit'
 
   destroy: (e) ->
-    item = $(e.target).item()
-    item.destroy() if confirm('Sure?')
-
+    itemID = $(e.target).parent().parent().data('id')
+    post = App.Post.find(itemID)
+    post.destroy() if confirm('Sure?')
 
 class New extends Spine.Controller
 
@@ -94,7 +99,6 @@ class Edit extends Spine.Controller
   submit: (e) ->
     e.preventDefault()
     post = @item.fromForm(e.target).save()
-    # @navigate '/posts'
     @navigate '/posts', post.id if post
     $(".nav-list > .active").removeClass("active")
     $("#all_posts").addClass("active")
@@ -124,7 +128,8 @@ class Show extends Spine.Controller
     @html @view('posts/show')(@item)
 
   back: ->
-    @navigate '/posts'
+    # App.Post.refresh
+    @navigate '/posts', trigger: true
 
   edit: ->
     @navigate '/posts', @item.id, 'edit'
@@ -147,6 +152,6 @@ class App.Posts extends Spine.SubStack
     '/posts/:id':      'show'
     '/posts/:id/edit': 'edit'
 
-  default:  'index'
+  # default:  'index'
 
   className: 'stack posts'

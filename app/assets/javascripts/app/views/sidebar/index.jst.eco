@@ -11,8 +11,8 @@
 	  <li id="all_posts" class="active"><a data-type="posts"  class="link"><i class="icon-copy"></i>Posts</a></li>
 	  <li id="all_users"><a data-type="users"  class="link"><i class="icon-group"></i>Users</a></li>
 	  <li class="nav-header">Media</li>
-	  <li><a href="#">Pictures</a></li>
-	  <li id="all_media"><a data-type="media"  class="link">Music</a></li>
+	  <li><a href="#"><i class="icon-picture"></i>Pictures</a></li>
+	  <li id="all_media"><a data-type="media"  class="link"><i class="icon-music"></i>Music</a></li>
 	  <li class="divider"></li>
 	  <li><a href="#">Help</a></li>
 	</ul>

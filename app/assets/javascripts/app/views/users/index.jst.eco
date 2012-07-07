@@ -1,5 +1,40 @@
-<h2>
+<!-- <h2>
 	Users Area
 </h2>
 
-<a data-type="new_user" class="link">New user</a>
+<a data-type="new_user" class="link">New user</a> -->
+
+<!-- <h2>
+	Posts Area
+</h2> -->
+<a data-type="new_user" class="btn btn-mini link">Add user</a>
+
+<div class="row userslist">
+	<div class="span5">
+		<h4>Nickname</h4>
+	</div>
+	<div class="span1">
+		<h4>Admin?</h4>
+	</div>
+	<div class="span2">
+		<h4>Action</h4>
+	</div>
+</div>
+<% for user in @users: %>
+<div class="row userslist" data-id="<%= user.id %>">
+	<div class="span5">
+		<a data-type="show" class="link"><%= user.nickname %></a>
+	</div>
+	<div class="span1">
+			<% if user.admin: %>
+				true
+			<%  else: %>
+				false
+			<% end %>
+	</div>
+	<div class="span2">
+		<a data-type="edit" class="btn btn-primary btn-mini">Edit</a>
+		<a data-type="destroy" class="btn btn-danger btn-mini">Destroy</a>
+	</div>
+</div>
+<% end %>

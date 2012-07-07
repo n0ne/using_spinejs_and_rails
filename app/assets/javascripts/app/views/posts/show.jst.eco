@@ -3,14 +3,14 @@
 <!-- <div style="display: none;" id="post_id"><%= @id %></div> -->
 
 <div class="row">
-	<div class="span6">
+	<div class="span8">
 		<div class="row showpost">
 			<div class="span1">Title:</div>
-			<div class="span5"><%= @title %></div>
+			<div class="span7"><%= @title %></div>
 		</div>
 		<div class="row showpost">
 			<div class="span1">Body:</div>
-			<div class="span5"><%= @body %></div>
+			<div class="span7"><%= @body %></div>
 		</div>
 	</div>
 	<div class="span2">

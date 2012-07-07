@@ -1,4 +1,11 @@
 Substack::Application.routes.draw do
+  resources :users
+
+  get "posts/next_page"
+  get "posts/prev_page"
+  get "posts/refresh"
+  get "posts/ids"
+
   resources :posts
 
   get "stack/index"

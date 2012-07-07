@@ -2,7 +2,8 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.where("id > ?", params[:index] || 0).limit(10)
+    # @posts = Post.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -78,6 +79,44 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_url }
       format.json { head :no_content }
+    end
+  end
+
+  def next_page
+    @posts = Post.where("id > ?", params[:id] || 0).limit(5)
+    # @posts = Post.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @posts }
+    end
+  end
+
+  def prev_page
+    @posts = Post.where("id < ?", params[:id] || 0).limit(5)
+    # @posts = Post.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @posts }
+    end
+  end
+
+  def ids
+    @first_id = Post.first().id
+    @last_id  = Post.last().id
+    respond_to do |format|
+      format.json {render json: { :first_id => @first_id, :last_id => @last_id} }
+    end
+  end
+
+  def refresh
+    @posts = Post.where("id >= ?", params[:id] || 0).limit(5)
+    # @posts = Post.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @posts }
     end
   end
 end

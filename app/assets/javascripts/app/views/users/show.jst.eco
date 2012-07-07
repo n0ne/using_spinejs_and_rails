@@ -1,0 +1,34 @@
+<h4>User info</h4>
+
+<!-- <div style="display: none;" id="post_id"><%= @id %></div> -->
+
+<div class="row">
+	<div class="span8">
+		<div class="row showpost">
+			<div class="span1">Nickname:</div>
+			<div class="span7"><%= @nickname %></div>
+		</div>
+		<div class="row showpost">
+			<div class="span1">Email:</div>
+			<div class="span7"><%= @email %></div>
+		</div>
+		<div class="row showpost">
+			<div class="span1">Admin?</div>
+			<div class="span7">
+				<% if @admin: %>
+					true
+				<%  else: %>
+					false
+				<% end %>
+			</div>
+		</div>
+		<div class="row showpost">
+			<div class="span1">Created at:</div>
+			<div class="span7"><%= Date(@created_at) %></div>
+		</div>
+	</div>
+	<div class="span2">
+		<a data-type="back" class="btn btn-mini">Back</a>
+		<a data-type="edit" class="btn btn-mini btn-primary">Edit</a>
+	</div>
+</div>

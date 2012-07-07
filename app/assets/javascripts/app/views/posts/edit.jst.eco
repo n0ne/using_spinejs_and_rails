@@ -5,14 +5,14 @@
     <div class="control-group">
           <label class="control-label" for="input_title">Title</label>
           <div class="controls">
-            <input type="text" name="title" class="input-xlarge span5" id="input_title" value="<%= @title %>" autofocus>
+            <input type="text" name="title" class="input-xlarge span7" id="input_title" value="<%= @title %>" autofocus>
             <p class="help-block">Input post title</p>
           </div>
     </div>
     <div class="control-group">
           <label class="control-label" for="input_body">Post body</label>
           <div class="controls">
-            <textarea name="body" class="input-xlarge span5" id="input_body"><%= @body %></textarea>
+            <textarea name="body" class="input-xlarge span7" id="input_body"><%= @body %></textarea>
 
             <p class="help-block">Input post body</p>
           </div>

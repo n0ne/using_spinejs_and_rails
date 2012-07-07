@@ -7,6 +7,6 @@ class App.Root extends Spine.Stack
     '/posts' 	 : 'posts'
     '/users'     : 'users'
 
-  default: 'posts'
+  default: 'users'
 
   className: 'stack root'
