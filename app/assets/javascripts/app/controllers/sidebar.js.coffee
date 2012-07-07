@@ -15,6 +15,8 @@ class App.Sidebar extends Spine.Controller
     @html @view('sidebar/index')
 
   users:  =>
+    App.User.fetch() unless App.User.count()
+    # App.User.fetch()
     $(".nav-list > .active").removeClass("active")
     $("#all_users").addClass("active")
     @log("Clicked Users link")

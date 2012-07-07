@@ -13,7 +13,8 @@ class Index extends Spine.Controller
     super
     @log('App.Users Index Controller constructor')
     App.User.bind 'refresh change', @render
-    App.User.fetch()
+    # App.User.fetch()
+    # @log(App.Users.index.isActive())
 
 
   render: =>
