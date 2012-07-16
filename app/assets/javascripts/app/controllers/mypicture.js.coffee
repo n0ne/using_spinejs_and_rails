@@ -10,10 +10,6 @@ class Index extends Spine.Controller
 
   constructor: ->
     super
-
-    # $(".nav-list > .active").removeClass("active")
-    # $("#all_pictures").addClass("active")
-
     @log('App.Picture Index Controller constructor')
     @html @view('pictures/index')()
 
@@ -33,11 +29,6 @@ class Index extends Spine.Controller
     @log($(e.target).parent().parent().data('id'))
     itemID = $(e.target).parent().parent().data('id')
     @navigate '/pictures', itemID
-
-  # render: =>
-  #   @log('App.Picture Index Controller render function')
-  #   # @records = App.Record.all()
-  #   @html @view('pictures/index')()
 
   destroy: (e) ->
     picID = $(e.target).parent().parent().data('id')
@@ -66,7 +57,6 @@ class Show extends Spine.Controller
     @html @view('pictures/show')(@item)
 
   back: ->
-    # App.Post.refresh
     @navigate '/pictures', trigger: true
 
 

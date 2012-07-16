@@ -2,13 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// .picture_list .span4 a, .picture_list .span1 a {
-// 	margin-top: 40px;
-// }
+
 .picture_list {
 	margin-right: 5px;
 	overflow: auto;
-	// overflow: none;
 	height: 600px;
 }
 
@@ -25,21 +22,3 @@
 .pictures ::-webkit-scrollbar-track-piece{background-color:#FAFAFA;-webkit-border-radius:0;-webkit-border-bottom-right-radius:8px;-webkit-border-bottom-left-radius:8px;}
 .pictures ::-webkit-scrollbar-thumb:vertical{height:50px;background-color:#999;-webkit-border-radius:8px;}
 .pictures ::-webkit-scrollbar-thumb:horizontal{width:50px;background-color:#999;-webkit-border-radius:8px;}
-
-
-// .pictures .loading {
-//   position: fixed;
-//   right: 20px;
-//   bottom: 10px;
-//   padding: 5px;
-//   background: #ffffcc;
-//   opacity: 0;
-//   -webkit-transition: opacity 0.5s linear;
-// }
-
-// // .pictures .loading {
-// //   opacity: 1;
-// // }
-// .visible {
-// 	opacity: 1;
-// }

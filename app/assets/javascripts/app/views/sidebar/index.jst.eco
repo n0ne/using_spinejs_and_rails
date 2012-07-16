@@ -1,10 +1,4 @@
-<!-- <ul>
-	<li><a data-type="users" class="link">Users</a></li>
-	<li><a data-type="posts" class="link">Posts</a></li>
-</ul>
- -->
 
- <!-- <div class="span3"> -->
 	<ul class="nav nav-list">
 	  <li class="nav-header">Content</li>
 	  <li id="add_post"><a data-type="new_post" class="link"><i class="icon-file"></i>New post</a></li>
@@ -14,6 +8,5 @@
 	  <li id="all_pictures"><a  data-type="pictures"  class="link"><i class="icon-picture"></i>Pictures</a></li>
 	  <li id="all_media"><a data-type="media"  class="link"><i class="icon-music"></i>Music</a></li>
 	  <li class="divider"></li>
-	  <li><a href="#">Help</a></li>
+	  <li id="help"><a data-type="help"  class="link"><i class="icon-question-sign"></i>Help</a></li>
 	</ul>
-<!-- </div> -->

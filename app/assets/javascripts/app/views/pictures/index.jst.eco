@@ -60,49 +60,12 @@ $(document).ready(function() {
 <script>
 $(document).ready(function() {
 
-  // if ( $(".stack .pictures").hasClass("active") ) {
-  //   (".nav-list > .active").removeClass("active")
-  //   $("#all_pictures").addClass("active")
-  // }
-
   $("#12345").scroll(function() {
 
-    // console.log('Высота дива: ' + $("#12345").height());
-    // console.log('Положение скроллера: ' + $("#12345").scrollTop());
-    // $('#54321').text($("#12345").height() - $("#12345").scrollTop());
-
     var el = $("#12345");
-    var delta = $("#12345").height() - $("#12345").scrollTop();
 
-    console.log(el[0].scrollHeight);
-    console.log(el.scrollTop());
-    console.log(el.outerHeight());
-
-    // console.log(delta);
     if ( el[0].scrollHeight - el.scrollTop() <=  el.outerHeight() * 1.2 ) {
-      // console.log("Download");
-      // console.log($(".mp3:last").data("id"));
       App.Picture.fetch_few();
-      // $.getJSON("/pictures",
-      //   {
-      //     index: $(".mp3:last").data("id")
-      //   },
-      //   function(data) {
-      //     // console.log(data);
-      //     $.each(data, function(i,item){
-      //       // item.image.url.appendTo($('.picture_list'));
-      //       // console.log(item.image.url);
-      //       // $('.picture_list').append(item.image.url);
-      //       // $('.picture_list').append("<br><br><br><br><br>");
-      //       var str = '<div class="row mp3" data-id="' + item.id + '">' +
-      //                 '<div class="span2"><img src="' + item.image.thumb.url + '"></div>' +
-      //                 '<div class="span4"><a href="' + item.image.url + '" style="margin-top: 40px;">Link to full picture</a></div>' +
-      //                 '<div class="span1" style="vertical-align: middle;"><a data-type="destroy" class="btn btn-danger btn-mini">Destroy</a></div>' +
-      //                '</div>';
-      //       $(str).appendTo($('.picture_list'));
-      //     });
-      //   }
-      // );
     }
   });
 });

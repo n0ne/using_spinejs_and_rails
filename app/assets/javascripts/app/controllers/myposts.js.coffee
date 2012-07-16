@@ -14,13 +14,6 @@ class Index extends Spine.Controller
 
   constructor: ->
     super
-
-    # $(".nav-list > .active").removeClass("active")
-    # $("#all_posts").addClass("active")
-
-    # $.getJSON "posts/ids", (data) ->
-    #   $("#first").text(data.first_id)
-    #   $("#last").text(data.last_id)
     @log('App.Posts Index Controller constructor')
     App.Post.bind 'refresh change', @render
     App.Post.fetch_few()
@@ -134,7 +127,6 @@ class Show extends Spine.Controller
     @html @view('posts/show')(@item)
 
   back: ->
-    # App.Post.refresh
     @navigate '/posts', trigger: true
 
   edit: ->

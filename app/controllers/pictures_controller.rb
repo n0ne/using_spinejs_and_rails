@@ -2,7 +2,6 @@ class PicturesController < ApplicationController
   # GET /pictures
   # GET /pictures.json
   def index
-    # @pictures = Picture.all
     @pictures = Picture.where("id > ?", params[:index] || 0).limit(8)
 
     respond_to do |format|
@@ -41,8 +40,6 @@ class PicturesController < ApplicationController
   # POST /pictures
   # POST /pictures.json
   def create
-    # @picture = Picture.new(params[:picture])
-
     newparams = coerce(params)
 
     @picture = Picture.new(newparams[:picture])
@@ -56,16 +53,6 @@ class PicturesController < ApplicationController
       end
     end
 
-    # respond_to do |format|
-    #   if @picture.save
-    #     # format.html { redirect_to @picture, notice: 'Picture was successfully created.' }
-    #     # format.json { render json: @picture, status: :created, location: @picture }
-    #     return  true
-    #   else
-    #     format.html { render action: "new" }
-    #     format.json { render json: @picture.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   # PUT /pictures/1

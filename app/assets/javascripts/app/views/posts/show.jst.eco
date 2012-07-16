@@ -1,7 +1,5 @@
 <h4>Show Post</h4>
 
-<!-- <div style="display: none;" id="post_id"><%= @id %></div> -->
-
 <div class="row">
 	<div class="span8">
 		<div class="row showpost">

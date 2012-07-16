@@ -7,9 +7,6 @@ class Index extends Spine.Controller
     super
     @log('App.Record Index Controller constructor')
     App.Record.bind 'refresh change', @render
-    # App.Record.fetch()
-    # @log(App.Users.index.isActive())
-
 
   render: =>
     @log('App.Record Index Controller render function')

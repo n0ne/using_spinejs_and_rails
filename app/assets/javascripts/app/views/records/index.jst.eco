@@ -9,7 +9,6 @@ var uploader = new qq.FileUploader({
     debug: true,
     element: document.getElementById('file-uploader'),
     allowedExtensions: ['mp3'],
-    // path to server-side upload script
     action: '/records',
     onComplete: function(id, fileName, responseJSON){
         if ($('.qq-upload-file:contains(\'' + fileName + '\')')) {

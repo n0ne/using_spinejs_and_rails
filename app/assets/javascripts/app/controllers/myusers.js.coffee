@@ -14,9 +14,6 @@ class Index extends Spine.Controller
     super
     @log('App.Users Index Controller constructor')
     App.User.bind 'refresh change', @render
-    # App.User.fetch()
-    # @log(App.Users.index.isActive())
-
 
   render: =>
     @log('App.Users Index Controller render function')
@@ -70,16 +67,10 @@ class New extends Spine.Controller
       user.admin = false
     @log(user)
     user.save()
-    # post = @item.fromForm(e.target).save()
-    # @navigate '/posts'
     @navigate '/users', user.id if user
-    # $(".nav-list > .active").removeClass("active")
-    # $("#all_posts").addClass("active")
 
   cancel: ->
     @navigate '/users'
-    # $(".nav-list > .active").removeClass("active")
-    # $("#all_posts").addClass("active")
 
 class Show extends Spine.Controller
 
@@ -137,16 +128,10 @@ class Edit extends Spine.Controller
       user.admin = false
     @log(user)
     user.save()
-    # post = @item.fromForm(e.target).save()
-    # @navigate '/posts'
     @navigate '/users', user.id if user
-    # $(".nav-list > .active").removeClass("active")
-    # $("#all_posts").addClass("active")
 
   cancel: ->
     @navigate '/users'
-    # $(".nav-list > .active").removeClass("active")
-    # $("#all_posts").addClass("active")
 
 
 class App.Users extends Spine.SubStack
