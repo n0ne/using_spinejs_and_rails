@@ -4,6 +4,8 @@ A small application that demonstrates the work of these programs together.
 
 More information about [Spine.js](http://spinejs.com/) or on [Github](https://github.com/maccman/spine).
 
+Working example can be found on [Heroku](http://spinejs-and-rails.herokuapp.com/)
+
 
 ## Getting Started
 
