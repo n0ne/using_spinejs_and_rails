@@ -1,12 +1,16 @@
 class App.Root extends Spine.Stack
   controllers:
     posts:		App.Posts
-    users:      App.Users
+    users:    App.Users
+    records:	App.Records
+    pictures: App.Pictures
 
   routes:
-    '/posts' 	 : 'posts'
+    '/posts' 	   : 'posts'
     '/users'     : 'users'
+    '/records'   : 'records'
+    '/pictures'  : 'pictures'
 
-  default: 'users'
+  default: 'posts'
 
   className: 'stack root'

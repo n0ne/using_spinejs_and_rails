@@ -8,6 +8,7 @@ class Index extends Spine.Controller
     'click [data-type=new_user]':        'new_user'
     'click [data-type=show]':            'show'
     'click [data-type=edit]':            'edit'
+    'click [data-type=destroy]':         'destroy'
 
   constructor: ->
     super
@@ -37,6 +38,12 @@ class Index extends Spine.Controller
     item = $(e.target).item()
     @log(item)
     @navigate '/users', item.id, 'edit'
+
+  destroy: (e) ->
+    itemID = $(e.target).parent().parent().data('id')
+    user = App.User.find(itemID)
+    @log(user)
+    user.destroy() if confirm('Sure?')
 
 class New extends Spine.Controller
 

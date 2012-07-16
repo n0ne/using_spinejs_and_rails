@@ -1,0 +1,5 @@
+<div class="row mp3" data-id="<%= @id %>">
+  <div class="span2"><img src="<%= @image.thumb.url %>"></div>
+  <div class="span4"><a data-type="show" class="link" style="margin-top: 40px;">Link to full picture</a></div>
+  <div class="span1" style="vertical-align: middle;"><a data-type="destroy" class="btn btn-danger btn-mini">Destroy</a></div>
+</div>

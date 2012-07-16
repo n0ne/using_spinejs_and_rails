@@ -1,0 +1,52 @@
+<h4>Records</h4>
+<div id="file-uploader">
+    <noscript>
+        <p>Please enable JavaScript to use file uploader.</p>
+    </noscript>
+</div>
+<script>
+var uploader = new qq.FileUploader({
+    debug: true,
+    element: document.getElementById('file-uploader'),
+    allowedExtensions: ['mp3'],
+    // path to server-side upload script
+    action: '/records',
+    onComplete: function(id, fileName, responseJSON){
+        if ($('.qq-upload-file:contains(\'' + fileName + '\')')) {
+          console.log($('.qq-upload-file:contains(\'' + fileName + '\')').parent());
+          $('.qq-upload-file:contains(\'' + fileName + '\')').parent().delay(2000).fadeOut();
+        }
+        var str = '<div class="row mp3"  data-id="' + responseJSON.id + '">' +
+                    '<div class="span1">' + responseJSON.id + '</div>' +
+                    '<div class="span6"><a href="' + responseJSON.src + '" class="media"></a></div>' +
+                    '<div class="span1"><a data-type="destroy" class="btn btn-danger btn-mini">Destroy</a></div>' +
+                  '</div>';
+        $(str).prependTo($('.playlist'));
+        $('a[href*="' + responseJSON.src + '"]').media( { width: 550, height: 20 } );
+
+
+    }
+});
+</script>
+
+
+
+
+<div class="playlist">
+<% for rec in @records: %>
+    <div class="row mp3" data-id="<%= rec.id %>">
+      <div class="span1"><%= rec.id %></div>
+      <div class="span6"><a href="<%= rec.audio.url %>" class="media"></a></div>
+      <div class="span1"><a data-type="destroy" class="btn btn-danger btn-mini">Destroy</a></div>
+    </div>
+<% end %>
+</div>
+
+<script type="text/javascript">
+  jQuery(function() {
+    return $('a.media').media({
+      width: 550,
+      height: 20
+    });
+  });
+</script>

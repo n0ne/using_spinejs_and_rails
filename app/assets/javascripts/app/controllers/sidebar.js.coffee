@@ -4,6 +4,8 @@ class App.Sidebar extends Spine.Controller
     'click [data-type=posts]':        'posts'
     'click [data-type=new_post]':     'new_post'
     'click [data-type=users]':        'users'
+    'click [data-type=media]':        'records'
+    'click [data-type=pictures]':     'pictures'
 
   constructor: ->
     super
@@ -34,6 +36,23 @@ class App.Sidebar extends Spine.Controller
     $("#add_post").addClass("active")
     @log("Clicked New Post link")
     @navigate '/posts/new'
+
+  records: =>
+    $(".nav-list > .active").removeClass("active")
+    $("#all_media").addClass("active")
+    App.Record.fetch() unless App.Record.count()
+    @log("Clicked Records link")
+    @navigate '/records'
+
+  pictures: =>
+    # App.Picture.fetch() unless App.Picture.count()
+    # $('.picture_footer').waypoint(offset: '70%')
+    # new App.Pictures
+    $(".nav-list > .active").removeClass("active")
+    $("#all_pictures").addClass("active")
+    # App.Picure.fetch() unless App.Record.count()
+    @log("Clicked Pictures link")
+    @navigate '/pictures'
 
 
 

@@ -1,4 +1,12 @@
 Substack::Application.routes.draw do
+  resources :pictures  do
+    collection do
+      get 'get_thumb'
+    end
+  end
+
+  resources :records
+
   resources :users
 
   get "posts/next_page"

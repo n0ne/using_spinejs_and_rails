@@ -11,14 +11,19 @@ class Index extends Spine.Controller
     'click [data-type=show]':       'show'
     'click [data-type=edit]':       'edit'
     'click [data-type=destroy]':    'destroy'
+
   constructor: ->
     super
+
+    # $(".nav-list > .active").removeClass("active")
+    # $("#all_posts").addClass("active")
+
     # $.getJSON "posts/ids", (data) ->
     #   $("#first").text(data.first_id)
     #   $("#last").text(data.last_id)
     @log('App.Posts Index Controller constructor')
     App.Post.bind 'refresh change', @render
-    App.Post.fetch()
+    App.Post.fetch_few()
 
   render: =>
     @log('App.Posts Index Controller render function')
@@ -41,6 +46,7 @@ class Index extends Spine.Controller
   destroy: (e) ->
     itemID = $(e.target).parent().parent().data('id')
     post = App.Post.find(itemID)
+    @log(post)
     post.destroy() if confirm('Sure?')
 
 class New extends Spine.Controller
@@ -152,6 +158,6 @@ class App.Posts extends Spine.SubStack
     '/posts/:id':      'show'
     '/posts/:id/edit': 'edit'
 
-  # default:  'index'
+  default:  'index'
 
   className: 'stack posts'

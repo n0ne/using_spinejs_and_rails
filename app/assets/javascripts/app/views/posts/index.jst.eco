@@ -69,14 +69,21 @@
 			</div>
 		</div>
 	</div> -->
-<!--
-	<script type="text/javascript">
-		$(function () {
-			console.log("Show scrollbar.");
-			 	// $('div#news-container').jScrollPane({ autoReinitialise: false });
+<script>
+$(document).ready(function() {
 
-			if ($(".all_users").hasClass("active")) {
-				$('div#news-container').jScrollPane({ autoReinitialise: false });
-			}
-		});
-	</script>-->
+  // if ( $(".stack .pictures").hasClass("active") ) {
+  //   (".nav-list > .active").removeClass("active")
+  //   $("#all_pictures").addClass("active")
+  // }
+
+  $(".posts_container").scroll(function() {
+
+    var el = $(".posts_container");
+
+    if ( el[0].scrollHeight - el.scrollTop() <=  el.outerHeight() ) {
+      App.Post.fetch_few();
+    }
+  });
+});
+</script>
